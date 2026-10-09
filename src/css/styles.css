@@ -135,14 +135,17 @@ p {
 
 .fa-shield-alt {
     color: #2cc76a;
+    text-shadow: #797676 3px 2px 3px
 }
 
 .fa-rocket {
     color: #ef3f29;
+    text-shadow: #797676 3px 2px 3px
 }
 
 .fa-comments {
     color: #ef8f29;
+    text-shadow: #797676 3px 2px 3px
 }
 
 .services-container h3 {
@@ -161,7 +164,7 @@ p {
     padding-bottom: 5rem;
     text-align: center;
     
-
+    
 }
 
 .pricing-container p {
@@ -173,6 +176,8 @@ p {
     justify-content: space-between;
     width: 90%;
     margin: 50px auto 0;
+
+    
     
 }
 
@@ -180,6 +185,7 @@ p {
     flex: 1;
     max-width: 275px;
     margin: 0 20px;
+    border-radius: 12px;
 }
 
 .plan ul {
@@ -206,6 +212,7 @@ p {
     margin: 0 auto -50px;
     font-size: 18px;
     position: relative;
+    
 }
 
 .plan .plan-name {
@@ -215,6 +222,9 @@ p {
     color: #fff;
     background-color: #202b34;
     padding: 50px 0;
+    border-radius: 10px 10px 0 0;
+    
+    
 }
 
 .plan .plan-btn {
@@ -224,6 +234,12 @@ p {
     height: 75px;
     line-height: 75px;
     cursor: pointer;
+    border-radius: 0 0 10px 10px;
+}
+
+
+.plan-btn:hover{
+    background-color: #178844;
 }
 
 .plan .recommended {
@@ -274,8 +290,12 @@ p {
 }
 
 .searchdomain-container input[type="submit"]:hover {
+    background-color: #178844;
+    color: #fff;
     opacity: 1;
 }
+
+
 
 /*Contact form*/
 
@@ -319,6 +339,15 @@ p {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
+    
+}
+
+
+.contact-container input[type="submit"]:hover {
+    background-color: #178844;
+    color: #fff;
+    
+    
 }
 
 footer {
