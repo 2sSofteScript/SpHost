@@ -72,6 +72,24 @@ p {
     color: #fff;
 }
 
+.fa-circle-user {
+    color: #fff;
+    font-size: 26px;
+    width: 120px;
+    cursor: pointer;
+
+    padding: 10px 10%;
+    border-radius: 9px;
+    display: inline-block;
+
+}
+
+.fa-circle-user:hover {
+
+    border: 2px solid #2cc76a;
+    background-image: linear-gradient(to bottom right, #094d25, #2acf6c);
+}
+
 /*main banner*/
 
 .main-banner {
@@ -161,14 +179,27 @@ p {
 /*Prices and plans*/
 
 .pricing-container {
+    padding-top: 20px;
     padding-bottom: 5rem;
     text-align: center;
-    
-    
+    background-image: linear-gradient(to bottom right, rgba(255, 196, 0, 0.507), rgba(78, 6, 194, 0.658));
+    background-image: linear-gradient();
+
+
 }
+
+.pricing-container h2 {
+
+    font-size: 40px;
+    color: #fff;
+    text-shadow: #07070786 3px 2px 3px
+}
+
 
 .pricing-container p {
     font-size: 20px;
+    text-shadow: #07070786 3px 2px 3px;
+    color: #fff;
 }
 
 .plans-container {
@@ -177,8 +208,9 @@ p {
     width: 90%;
     margin: 50px auto 0;
 
-    
-    
+
+
+
 }
 
 .plan {
@@ -212,7 +244,7 @@ p {
     margin: 0 auto -50px;
     font-size: 18px;
     position: relative;
-    
+
 }
 
 .plan .plan-name {
@@ -223,8 +255,8 @@ p {
     background-color: #202b34;
     padding: 50px 0;
     border-radius: 10px 10px 0 0;
-    
-    
+
+
 }
 
 .plan .plan-btn {
@@ -238,7 +270,7 @@ p {
 }
 
 
-.plan-btn:hover{
+.plan-btn:hover {
     background-color: #178844;
 }
 
@@ -269,6 +301,13 @@ p {
     border: none;
     border-radius: 5px;
     margin: 0 auto;
+    color: #2cc762;
+    font-weight: 600;
+}
+
+input {
+    border: none;
+    outline: none;
 }
 
 .searchdomain-container input[type="text"] {
@@ -280,6 +319,22 @@ p {
 
 }
 
+
+
+/*
+.fa-solid {
+    display: inline-flex;
+    margin-left: 50%;
+    text-align: end;
+    background-color: #178844;
+    color: #ccc;
+    font-size: 30px;
+    position: absolute;
+
+    padding: 0 0 1% 2px;
+
+}
+*/
 .searchdomain-container input[type="submit"] {
     background-color: #2cc76a;
     padding: 15px 30px;
@@ -294,7 +349,6 @@ p {
     color: #fff;
     opacity: 1;
 }
-
 
 
 /*Contact form*/
@@ -339,15 +393,84 @@ p {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-    
+
 }
 
 
 .contact-container input[type="submit"]:hover {
     background-color: #178844;
     color: #fff;
+
+
+}
+
+.faq-container {
     
-    
+    background-image: linear-gradient(to bottom right, #96ffc075, #ffffffd3);
+    padding: 19px 0 10px;
+    border: 6px solid rgba(0, 187, 72, 0.973);
+    border-radius: 2px;
+}
+
+.faq-container h1 {
+    color: #333;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.accordion {
+    max-width: 600px;
+    margin: auto;
+}
+
+.accordion-item {
+    background: #fff;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-left: 6px solid #2cc762;
+    border-bottom: 3px solid #178844;
+}
+
+.accordion-item label {
+    display: block;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Seta adicionada via ::before */
+.accordion-item label::before {
+    content: "▶";
+    position: absolute;
+    right: 15px;
+    transition: transform 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Conteúdo escondido por padrão (sem padding para não ocupar espaço) */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 12px;
+    /* Mantém o alinhamento nas laterais, mas zera em cima/baixo */
+}
+
+/* Quando o rádio for marcado, expande o conteúdo e aplica o padding */
+input[type="radio"]:checked~.accordion-content {
+    max-height: 200px;
+    padding: 12px;
+}
+
+/* CORREÇÃO AQUI: Alvo correto é o ::before do label que vem logo após o input marcado */
+input[type="radio"]:checked+label::before {
+    transform: rotate(90deg);
 }
 
 footer {
@@ -373,7 +496,7 @@ footer {
 /*tablet 900px*/
 
 @media(max-width: 900px) {
-    .main-banner p{
+    .main-banner p {
         font-size: 32px;
         padding: 0 6rem;
     }
@@ -384,51 +507,55 @@ footer {
 }
 
 /*celular 576px*/
-@media (max-width: 576px){
+@media (max-width: 576px) {
+
     html,
-    body{
+    body {
         overflow-x: hidden;
     }
-    .navbar-items li{
+
+    .navbar-items li {
         font-size: 12px;
         margin-left: 10px;
     }
-    .main-banner p{
+
+    .main-banner p {
         padding: 0 2rem;
     }
 
-    .services-container ul{
+    .services-container ul {
         flex-direction: column;
     }
 
 
-    .plans-container{
+    .plans-container {
         flex-direction: column;
         width: 100%;
         padding: 0 2rem;
-        
+
     }
-    .plan{
+
+    .plan {
         width: 100%;
         max-width: 100%;
         margin-bottom: 20px;
-        
+
     }
 
-    .searchdomain-container h2{
+    .searchdomain-container h2 {
         font-size: 28px;
     }
 
-    .searchdomain-container input[type="text"]{
+    .searchdomain-container input[type="text"] {
         width: 100%;
     }
 
-    .contact-container{
+    .contact-container {
         padding: 3rem 2rem;
     }
 
     .contact-container input,
-    .contact-container textarea{
+    .contact-container textarea {
         width: 100%;
         margin: 10px 0;
     }
