@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Helvetica;
+    font-family: Helvetica, Arial, sans-serif;
     box-sizing: border-box;
 }
 
@@ -17,7 +17,6 @@ p {
 }
 
 /*Navbar*/
-
 .navbar-container {
     width: 100%;
     height: 80px;
@@ -25,30 +24,31 @@ p {
     padding: 0 2rem;
 }
 
-.nav {
-    position: relative;
-
+/* CORREÇÃO: Usando Flexbox para alinhar a logo e o menu perfeitamente */
+.navbar-container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
     width: 50px;
-    margin-top: 15px;
+    display: block;
 }
 
 .navbar-items {
-    position: absolute;
-    right: 0;
     height: 80px;
     line-height: 80px;
-    margin: 0 40px;
-    display: inline-block;
+    display: flex;
+    list-style: none;
 }
 
 .navbar-items li {
-    display: inline-block;
     text-transform: uppercase;
     margin-left: 25px;
-
 }
 
 .navbar-items a {
@@ -62,7 +62,8 @@ p {
 }
 
 .default-btn {
-    padding: 15px 20px;
+    padding: 10px 20px;
+    /* Ajustado para não estourar a linha */
     background-color: #2cc76a;
     border-radius: 5px;
 }
@@ -77,35 +78,22 @@ p {
     font-size: 26px;
     width: 120px;
     cursor: pointer;
-
     padding: 10px 10%;
     border-radius: 9px;
     display: inline-block;
-
 }
 
 .fa-circle-user:hover {
-
     border: 2px solid #2cc76a;
     background-image: linear-gradient(to bottom right, #094d25, #2acf6c);
 }
 
 /*main banner*/
-
 .main-banner {
     background-image: url("../img/mainbanner.jpg");
     background-size: cover;
     background-position: center;
     padding: 10rem 0;
-
-}
-
-.main-banner {
-    background-image: url("../img/mainbanner.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 10rem 0;
-
 }
 
 .main-banner h1,
@@ -114,11 +102,11 @@ p {
     text-align: center;
     font-weight: bold;
     text-shadow: #000 3px 2px 3px;
-
 }
 
 .main-banner h1 {
     font-size: 54px;
+    margin-bottom: 10px;
 }
 
 .main-banner p {
@@ -134,16 +122,13 @@ p {
     display: flex;
     width: 90%;
     margin: 0 auto;
-
 }
-
 
 .services-container li {
     flex: 1 1 200px;
     list-style: none;
     text-align: center;
     padding: 20px;
-
 }
 
 .fas {
@@ -153,48 +138,40 @@ p {
 
 .fa-shield-alt {
     color: #2cc76a;
-    text-shadow: #797676 3px 2px 3px
+    text-shadow: #797676 3px 2px 3px;
 }
 
 .fa-rocket {
     color: #ef3f29;
-    text-shadow: #797676 3px 2px 3px
+    text-shadow: #797676 3px 2px 3px;
 }
 
 .fa-comments {
     color: #ef8f29;
-    text-shadow: #797676 3px 2px 3px
+    text-shadow: #797676 3px 2px 3px;
 }
 
 .services-container h3 {
     margin-bottom: 25px;
-
 }
 
 .services-container p {
     line-height: 24px;
-
 }
 
 /*Prices and plans*/
-
 .pricing-container {
-    padding-top: 20px;
+    padding-top: 5rem;
     padding-bottom: 5rem;
     text-align: center;
     background-image: linear-gradient(to bottom right, rgba(255, 196, 0, 0.507), rgba(78, 6, 194, 0.658));
-    background-image: linear-gradient();
-
-
 }
 
 .pricing-container h2 {
-
     font-size: 40px;
     color: #fff;
-    text-shadow: #07070786 3px 2px 3px
+    text-shadow: #07070786 3px 2px 3px;
 }
-
 
 .pricing-container p {
     font-size: 20px;
@@ -204,25 +181,25 @@ p {
 
 .plans-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Mudado para agrupar melhor no centro */
+    flex-wrap: wrap;
+    /* Permite que quebrem linha se a tela for pequena */
     width: 90%;
     margin: 50px auto 0;
-
-
-
-
+    gap: 20px;
+    /* Cria espaçamento uniforme entre os planos */
 }
 
 .plan {
-    flex: 1;
+    flex: 1 1 250px;
+    /* Tamanho flexível dinâmico */
     max-width: 275px;
-    margin: 0 20px;
     border-radius: 12px;
 }
 
 .plan ul {
     padding: 0;
-
 }
 
 .plan li {
@@ -244,7 +221,8 @@ p {
     margin: 0 auto -50px;
     font-size: 18px;
     position: relative;
-
+    z-index: 2;
+    /* Garante que a bola fique por cima do título do plano */
 }
 
 .plan .plan-name {
@@ -255,8 +233,6 @@ p {
     background-color: #202b34;
     padding: 50px 0;
     border-radius: 10px 10px 0 0;
-
-
 }
 
 .plan .plan-btn {
@@ -269,7 +245,6 @@ p {
     border-radius: 0 0 10px 10px;
 }
 
-
 .plan-btn:hover {
     background-color: #178844;
 }
@@ -278,6 +253,7 @@ p {
     background-color: #f45c57;
 }
 
+/*Search domain*/
 .searchdomain-container {
     background-color: #34454e;
     text-align: center;
@@ -315,26 +291,8 @@ input {
     padding: 20px;
     font-size: 20px;
     margin-bottom: 25px;
-
-
 }
 
-
-
-/*
-.fa-solid {
-    display: inline-flex;
-    margin-left: 50%;
-    text-align: end;
-    background-color: #178844;
-    color: #ccc;
-    font-size: 30px;
-    position: absolute;
-
-    padding: 0 0 1% 2px;
-
-}
-*/
 .searchdomain-container input[type="submit"] {
     background-color: #2cc76a;
     padding: 15px 30px;
@@ -350,9 +308,7 @@ input {
     opacity: 1;
 }
 
-
 /*Contact form*/
-
 .contact-container {
     text-align: center;
     padding: 5rem 0 2rem 0;
@@ -361,7 +317,6 @@ input {
 .contact-container h2 {
     font-size: 36px;
     margin-bottom: 15px;
-
 }
 
 .contact-container p {
@@ -393,29 +348,27 @@ input {
     color: #fff;
     cursor: pointer;
     font-weight: bold;
-
 }
-
 
 .contact-container input[type="submit"]:hover {
     background-color: #178844;
     color: #fff;
-
-
 }
 
+/*FAQ Acordeon*/
 .faq-container {
-    
     background-image: linear-gradient(to bottom right, #96ffc075, #ffffffd3);
     padding: 19px 0 10px;
-    border: 6px solid rgba(0, 187, 72, 0.973);
+    border-bottom: 3px solid #178844;
     border-radius: 2px;
 }
 
 .faq-container h1 {
     color: #333;
+    font-size: 25px;
     font-weight: bolder;
     text-align: center;
+    padding-bottom: 16px;
 }
 
 .accordion {
@@ -424,7 +377,7 @@ input {
 }
 
 .accordion-item {
-    background: #fff;
+    background-color: transparent;
     border-radius: 8px;
     margin: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
@@ -439,11 +392,12 @@ input {
     font-weight: bold;
     cursor: pointer;
     position: relative;
+    color: #2acf6c;
 }
 
-/* Seta adicionada via ::before */
 .accordion-item label::before {
     content: "▶";
+    color: #178844;
     position: absolute;
     right: 15px;
     transition: transform 0.3s ease;
@@ -453,22 +407,18 @@ input[type="radio"] {
     display: none;
 }
 
-/* Conteúdo escondido por padrão (sem padding para não ocupar espaço) */
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     padding: 0 12px;
-    /* Mantém o alinhamento nas laterais, mas zera em cima/baixo */
 }
 
-/* Quando o rádio for marcado, expande o conteúdo e aplica o padding */
 input[type="radio"]:checked~.accordion-content {
     max-height: 200px;
     padding: 12px;
 }
 
-/* CORREÇÃO AQUI: Alvo correto é o ::before do label que vem logo após o input marcado */
 input[type="radio"]:checked+label::before {
     transform: rotate(90deg);
 }
@@ -479,10 +429,7 @@ footer {
     margin: 20px 0 100px;
 }
 
-/*responsividade*/
-
-/*small laptops a partir de 1100px*/
-
+/*Responsividade*/
 @media (max-width: 1100px) {
     .plans-container {
         width: 95%;
@@ -493,70 +440,74 @@ footer {
     }
 }
 
-/*tablet 900px*/
-
 @media(max-width: 900px) {
     .main-banner p {
-        font-size: 32px;
-        padding: 0 6rem;
+        font-size: 24px;
+        padding: 0 2rem;
     }
 
     .searchdomain-container {
         padding: 2rem 4rem;
     }
-}
-
-/*celular 576px*/
-@media (max-width: 576px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-
-    .navbar-items li {
-        font-size: 12px;
-        margin-left: 10px;
-    }
-
-    .main-banner p {
-        padding: 0 2rem;
-    }
 
     .services-container ul {
         flex-direction: column;
+        /* Serviços ficam empilhados em tablets */
+    }
+}
+
+/* CORREÇÃO DO BLOCO CORTADO: Fechamento correto da sintaxe mobile */
+/* Oculta o botão hambúrguer em telas grandes */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 12px;
+}
+
+.menu-toggle .icon-hamburguer{
+    color: #fff;
+    font-size: 45px;
+}
+
+/* Ajustes para o menu mobile no celular */
+@media (max-width: 576px) {
+    .menu-toggle {
+        display: block;
+        
+        /* Mostra o botão no celular */
     }
 
-
-    .plans-container {
+    /* Esconde os itens por padrão no celular e transforma em coluna quando ativo */
+    .navbar-items {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #232a31;
         flex-direction: column;
-        width: 100%;
-        padding: 0 2rem;
-
+        height: auto;
+        line-height: normal;
+        padding: 1rem 0 2rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin: 0;
+        
     }
 
-    .plan {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-
+    .navbar-items.active {
+        display: flex;
+        
+        /* Exibe o menu quando a classe active é adicionada via JS */
     }
 
-    .searchdomain-container h2 {
-        font-size: 28px;
+    .navbar-items li {
+        margin: 15px 0;
+        text-align: center;
     }
 
-    .searchdomain-container input[type="text"] {
-        width: 100%;
-    }
-
-    .contact-container {
-        padding: 3rem 2rem;
-    }
-
-    .contact-container input,
-    .contact-container textarea {
-        width: 100%;
-        margin: 10px 0;
+    .navbar-items .default-btn {
+        display: inline-block;
+        margin-top: 10px;
     }
 }

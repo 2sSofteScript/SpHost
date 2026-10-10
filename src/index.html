@@ -18,26 +18,18 @@
                 <a href="#">
                     <img src="img/server-solid.png" alt="SP Host" class="logo">
                 </a>
-                <ul class="navbar-items">
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Preços</a>
-                    </li>
-                    <li>
-                        <a href="#">Contato</a>
-                    </li>
-                    <li>
-                        <a href="#" class="default-btn">Entar</a>
-                    </li>
-
-                    <!--<li><a href="#"><i class="fa-regular fa-circle-user"></i></a>-->
-
-                    </li>
+                <!-- Botão do Menu Hambúrguer -->
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars icon-hamburguer"></i>
+                </div>
+                <ul class="navbar-items" id="navbar-items">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Preços</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#" class="default-btn">Entrar</a></li>
                 </ul>
-
             </nav>
+
 
         </div>
         <main>
@@ -138,7 +130,7 @@
             </section>
             <section class="contact-container">
                 <h2>Mande uma mensagem</h2>
-                <p>Envie a sua mensagem, em até 4 horas um especialista entrará em contato.</p>
+                <p>Envie a sua mensagem, em até 2 horas um especialista entrará em contato.</p>
                 <form action="">
                     <input type="text" name="name" id="name" placeholder="Seu nome">
                     <input type="email" name="email" id="email" placeholder="Seu e-mail">
@@ -148,10 +140,10 @@
             </section>
 
             <section class="faq-container">
-                <h1>FAQ</h1>
+                <h1>Perguntas frequentes sobre a plataforma</h1>
                 <div class="accordion">
                     <div class="accordion-item">
-                        <input type="radio" name="accordion" id="faq1" >
+                        <input type="radio" name="accordion" id="faq1">
                         <label for="faq1">Por que preciso fazer o cadastro?</label>
                         <div class="accordion-content">
                             <p>O cadastro garante segurança e personalização da sua experiência.</p>
@@ -176,12 +168,15 @@
                 </div>
             </section>
         </main>
+
         <footer>
-            <p>SP Host @ 2026</p>
+            <p>SP Host @ 2026 Dev: Allesson Almeida</p>
         </footer>
     </div>
 
 
+
 </body>
+<script src="./javascript/javascript.js"></script>
 
 </html>
